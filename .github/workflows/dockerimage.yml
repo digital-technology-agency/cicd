@@ -8,6 +8,6 @@ jobs:
     - name: Auth
       run: docker login -u dtahub -p ${{ secrets.AUTH }}
     - name: Build
-      run: docker build . --file Dockerfile
+      run: docker build -t dtahub/cicd . --file Dockerfile
     - name: Publish
-      run: docker push docker.io/dtahub/cicd
+      run: docker push dtahub/cicd
